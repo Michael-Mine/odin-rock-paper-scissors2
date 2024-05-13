@@ -1,10 +1,27 @@
 let humanChoice;
 let computerChoice;
 
-function getHumanChoice() {
-    humanChoice = prompt("Make your choice, type: rock, paper or scissors");
-    return humanChoice.toLowerCase(); 
-}
+const selection = document.querySelector("#selection");
+
+selection.addEventListener('click', (event) => {
+    let target = event.target;
+
+    switch(target.id) {
+        case "rock":
+            humanChoice = "rock";
+            playRound("rock", computerSelection);
+            break;
+        case "paper":
+            humanChoice = "paper";
+            playRound("paper", computerSelection);
+            break;
+        case "scissors":
+            humanChoice = "scissors";
+            playRound("scissors", computerSelection);
+            break;    
+    }
+});
+
 function getComputerChoice() {
     computerChoice = Math.random()
     
@@ -17,10 +34,10 @@ function getComputerChoice() {
     }
     return computerChoice;
 }
-const humanSelection = getHumanChoice();
+let humanSelection;
 const computerSelection = getComputerChoice();
 
-function playGame() {
+//function playGame() {
     let humanScore = 0;
     let computerScore = 0; 
     function playRound(humanChoice, computerChoice) {
@@ -46,9 +63,10 @@ function playGame() {
         }
     }
     playRound(humanSelection, computerSelection);
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());   
-}
-playGame();
+    // playRound(getHumanChoice(), getComputerChoice());
+    // playRound(getHumanChoice(), getComputerChoice());
+    // playRound(getHumanChoice(), getComputerChoice());
+    // playRound(getHumanChoice(), getComputerChoice());   
+//}
+//playGame();
+
