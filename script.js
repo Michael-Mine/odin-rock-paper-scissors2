@@ -22,6 +22,14 @@ selection.addEventListener('click', (event) => {
     }
 });
 
+const results = document.querySelector("#results");
+
+function displayResults(text) {
+    let content = document.createElement("div")
+    content.textContent = text;
+    results.appendChild(content);
+}
+
 function getComputerChoice() {
     computerChoice = Math.random()
     
@@ -41,25 +49,25 @@ const computerSelection = getComputerChoice();
     let humanScore = 0;
     let computerScore = 0; 
     function playRound(humanChoice, computerChoice) {
-        console.log("Human choice is " + humanChoice);
-        console.log("Computer choice is " + computerChoice);
+        displayResults("Human choice is " + humanChoice);
+        displayResults("Computer choice is " + computerChoice);
     
         if (humanChoice === computerChoice) {
-            alert("This round is a tie!")        
+            displayResults("This round is a tie!")        
         } else if ((humanChoice === "rock" && computerChoice == "scissors") ||
                 (humanChoice === "paper" && computerChoice == "rock") ||
                 (humanChoice === "scissors" && computerChoice == "paper")) {
-            alert("You win this round!")
+            displayResults("You win this round!")
             humanScore++;
-            alert("Your score is " + humanScore + " and computer score is " + computerScore)
+            displayResults("Your score is " + humanScore + " and computer score is " + computerScore)
         } else if ((computerChoice === "rock" && humanChoice == "scissors") ||
                 (computerChoice === "paper" && humanChoice == "rock") ||
                 (computerChoice === "scissors" && humanChoice == "paper")) {
-            alert("You lose this round!")
+            displayResults("You lose this round!")
             computerScore++;
-            alert("Your score is " + humanScore + " and computer score is " + computerScore)
+            displayResults("Your score is " + humanScore + " and computer score is " + computerScore)
         } else {
-            alert("Choice not recognised! Please type a valid choice of: rock, paper or scissors")
+            displayResults("Choice not recognised! Please type a valid choice of: rock, paper or scissors")
         }
     }
     playRound(humanSelection, computerSelection);
