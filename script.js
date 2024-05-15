@@ -37,7 +37,7 @@ const score = document.querySelector("#score");
 function displayScore() {
     
     let content = document.createElement("div")
-    content.textContent = "Your score is " + humanScore + " and computer score is " + computerScore;
+    content.textContent = "Your score is " + humanScore + " and computer score is " + computerScore + ".";
     score.appendChild(content);
     if (humanScore > 4) alert("Game Over - You Win!");
     if (computerScore > 4) alert("Game Over - You Lose!");
@@ -57,8 +57,8 @@ function getComputerChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-    displayResults("Human choice is " + humanChoice);
-    displayResults("Computer choice is " + computerChoice);
+    displayResults("Human choice is " + humanChoice + ".");
+    displayResults("Computer choice is " + computerChoice + ".");
 
     if (humanChoice === computerChoice) {
         displayResults("This round is a tie!");
@@ -68,17 +68,17 @@ function playRound(humanChoice, computerChoice) {
             (humanChoice === "scissors" && computerChoice == "paper")) {
         displayResults("You win this round!")
         humanScore++;
-        displayResults("Your score is " + humanScore + " and computer score is " + computerScore);
+        displayResults("Your score is " + humanScore + " and computer score is " + computerScore + ".");
         displayScore();
     } else if ((computerChoice === "rock" && humanChoice == "scissors") ||
             (computerChoice === "paper" && humanChoice == "rock") ||
             (computerChoice === "scissors" && humanChoice == "paper")) {
         displayResults("You lose this round!");
         computerScore++;
-        displayResults("Your score is " + humanScore + " and computer score is " + computerScore);
+        displayResults("Your score is " + humanScore + " and computer score is " + computerScore + ".");
         displayScore();
     } else {
-        displayResults("Choice not recognised! Please type a valid choice of: rock, paper or scissors");
+        displayResults("Choice not recognised! Please type a valid choice of: rock, paper or scissors.");
         displayScore();
     }
 }

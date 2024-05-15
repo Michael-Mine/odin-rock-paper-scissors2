@@ -1,0 +1,28 @@
+* {
+    color: rgb(209, 213, 219);
+    background-color: rgb(17, 24,39);
+    font-size: 18px;
+}
+
+#rock {
+    background-color: brown;
+}
+
+#paper {
+    background-color: mediumseagreen;
+}
+
+#scissors {
+    background-color: dodgerblue;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border: 10px;
+    margin: 10px;
+    font-size: 24px;
+    
+
+}
